@@ -2,4 +2,9 @@
 
 require './formatDiff.rb'
 
-pp Diff.format_diff("Abcdefg", "abcdefgzz")
+a = File.read('./testdata/1.txt').split("\n")
+b = File.read('./testdata/2.txt').split("\n")
+
+
+
+puts Diff.format(a, b)
