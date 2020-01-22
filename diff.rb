@@ -4,20 +4,20 @@ require './cordinate.rb'
 
 class Diff
   class << self
-    # @params a file path1
-    # @params b file path2
+    # @params a Array
+    # @params b Array
     def diff(a, b)
       init(a, b)
-      edit_distance
-      ses
+      ed = edit_distance
+      {
+        edit_distance: ed,
+        ses: ses
+      }
     end
 
     private
 
-    def init(_a, _b)
-      a = File.read(_a)
-      b = File.read(_b)
-      # b must be greater than a
+    def init(a, b)
       if a.length < b.length
         @a = a
         @b = b

@@ -1,5 +1,5 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
-require './diff.rb'
+require './formatDiff.rb'
 
-pp Diff.diff('./b.txt', './a.txt')
+pp Diff.format_diff("Abcdefg", "abcdefgzz")
